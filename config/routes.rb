@@ -1,56 +1,16 @@
 CrapCrud::Application.routes.draw do
-  # The priority is based upon order of creation: first created -> highest priority.
-  # See how all your routes lay out with "rake routes".
 
-  # You can have the root of your site routed with "root"
   # root 'welcome#index'
+  get 'persons' => 'persons#index'  # list all person # gets are nulipotent, doesn't change anything, safe, only gets
+  get 'persons/new' => 'persons#new' #form to add a new person
+ # new needs to be before :id, it thinks new is the id!
+  get 'persons/:id' =>  'persons#show' #name of collection passing in an id  #show one person
 
-  # Example of regular route:
-  #   get 'products/:id' => 'catalog#view'
-
-  # Example of named route that can be invoked with purchase_url(id: product.id)
-  #   get 'products/:id/purchase' => 'catalog#purchase', as: :purchase
-
-  # Example resource route (maps HTTP verbs to controller actions automatically):
-  #   resources :products
-
-  # Example resource route with options:
-  #   resources :products do
-  #     member do
-  #       get 'short'
-  #       post 'toggle'
-  #     end
-  #
-  #     collection do
-  #       get 'sold'
-  #     end
-  #   end
-
-  # Example resource route with sub-resources:
-  #   resources :products do
-  #     resources :comments, :sales
-  #     resource :seller
-  #   end
-
-  # Example resource route with more complex sub-resources:
-  #   resources :products do
-  #     resources :comments
-  #     resources :sales do
-  #       get 'recent', on: :collection
-  #     end
-  #   end
   
-  # Example resource route with concerns:
-  #   concern :toggleable do
-  #     post 'toggle'
-  #   end
-  #   resources :posts, concerns: :toggleable
-  #   resources :photos, concerns: :toggleable
+  get 'persons/:id/edit' => 'persons#edit' #form to edit person
 
-  # Example resource route within a namespace:
-  #   namespace :admin do
-  #     # Directs /admin/products/* to Admin::ProductsController
-  #     # (app/controllers/admin/products_controller.rb)
-  #     resources :products
-  #   end
+  post 'persons' => 'persons#create' #create a new person, ust like p = Person.new?
+  put 'persons/:id' => 'persons#update' #update a person
+  patch 'persons/:id' => 'persons#update' #update an attribute of a person
+  delete 'persons/:id' => 'persons#destroy' #delete a person, delete from a db, objects get destroyed
 end
