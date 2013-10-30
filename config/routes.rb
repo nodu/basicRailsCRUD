@@ -1,4 +1,4 @@
-CrapCrud::Application.routes.draw do
+BasicRailsCRUD::Application.routes.draw do
   resources :persons  #does the exact same as all below
   # if using a GET it will usually return a HTML, nulipotent, doens't change!
   # if POST PUT PATCH DELETE, it will usually redirect to a get; itempotent makes changes! 

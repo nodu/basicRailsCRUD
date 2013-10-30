@@ -3,4 +3,4 @@
 
 require File.expand_path('../config/application', __FILE__)
 
-CrapCrud::Application.load_tasks
+BasicRailsCRUD::Application.load_tasks
