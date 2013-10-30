@@ -1,0 +1,21 @@
+h1 Add a new person
+
+= form_for @person do |f|
+  p
+  	= f.label :name
+  p
+  	= f.text_field :name
+  	br
+  p
+  	= f.label :age
+  p
+  	= f.text_field :age
+  	br
+  p
+  	= f.label :is_a_clown
+  p
+  	= f.check_box :is_a_clown
+  	br
+  p
+  	= f.submit
+
