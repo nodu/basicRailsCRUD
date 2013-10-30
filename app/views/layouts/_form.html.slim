@@ -1,0 +1,15 @@
+= form_for @person do |f|
+  p
+    = f.label :name
+    br
+    = f.text_field :name
+  p
+    = f.label :age
+    br
+    = f.text_field :age
+  p
+    = f.label :is_a_clown
+    br
+    = f.check_box :is_a_clown
+  p
+    = f.submit

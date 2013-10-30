@@ -1,5 +1,29 @@
-h1 This is the list page
+h1 
+	span This is the list page 
+	= link_to "New", new_person_url
 
-ul
-	- @persons.each do |person|
-		li = person.name
+/ ul
+/ 	- @persons.each do |person|
+/ 		li #{person.name} (#{person.id}) #{link_to "X", person_url(person), method: :delete, confirm: "Are you sure?"}
+	
+
+/ br
+/ br
+
+/ table 
+/ 	- @persons.each do |person|
+/ 		tr
+/ 			td #{person.name}
+/ 			td #{person.id}
+/ 			td = link_to person.name, person_url(person)
+
+/ br
+/ br
+
+table
+  - @persons.each do |p|
+    tr
+      td style="width: 60%" #{p.name}
+      td = link_to "Show", person_url(p)
+      td = link_to "Edit", edit_person_url(p)
+      td = link_to "Delete", person_url(p), method: :delete, confirm: "Are you sure?"
